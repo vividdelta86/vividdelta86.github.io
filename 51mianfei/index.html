@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51免费版视频-免费版视频观看入口_在线视频资源与使用说明</title>
+<meta name="description" content="51免费版视频首页，提供免费版视频的观看入口、内容分类与使用说明，帮助访问者快速找到想看的在线视频内容，了解页面各项功能的实际用途。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M26 20l18 12-18 12z' fill='%23f97316'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-2:#334155;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --accent:#f97316;
+  --accent-deep:#ea580c;
+  --accent-soft:#fff2e8;
+  --navy:#111827;
+  --radius:16px;
+  --max:1120px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink-2);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{color:var(--ink);line-height:1.35;margin:0;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+
+/* 页头 */
+header.site{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:20;
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);font-size:18px;letter-spacing:.3px;}
+.brand svg{flex:none;}
+nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+nav.main a{
+  padding:7px 12px;border-radius:999px;font-size:14.5px;color:var(--ink-2);
+  transition:background .18s,color .18s;
+}
+nav.main a:hover{background:var(--accent-soft);color:var(--accent-deep);}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(800px 320px at 88% -10%, #ffe4cc 0%, rgba(255,228,204,0) 70%),
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;padding:52px 20px 48px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-soft);color:var(--accent-deep);
+  font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;margin-bottom:16px;
+}
+.hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.5px;}
+.hero p.lead{margin:16px 0 0;font-size:16.5px;color:var(--ink-2);max-width:34em;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:10px;font-weight:600;font-size:15px;
+  border:1px solid transparent;cursor:pointer;transition:transform .15s,background .18s,box-shadow .18s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px -10px rgba(249,115,22,.9);}
+.btn-primary:hover{background:var(--accent-deep);transform:translateY(-1px);}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{border-color:#cbd5e1;background:#fbfdff;}
+.hero-facts{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap;}
+.fact b{display:block;font-size:20px;color:var(--ink);font-weight:800;}
+.fact span{font-size:13px;color:var(--muted);}
+
+.hero-visual{
+  background:var(--navy);border-radius:22px;padding:22px;
+  box-shadow:0 24px 50px -28px rgba(15,23,42,.7);
+  position:relative;overflow:hidden;
+}
+.hero-visual::after{
+  content:"";position:absolute;inset:auto -30% -55% auto;width:70%;height:70%;
+  background:radial-gradient(circle,#f97316 0%,rgba(249,115,22,0) 68%);opacity:.35;
+}
+.player-card{
+  position:relative;z-index:1;background:#1e293b;border-radius:14px;padding:16px;color:#e2e8f0;
+}
+.player-top{display:flex;gap:6px;margin-bottom:14px;}
+.dot{width:9px;height:9px;border-radius:50%;background:#475569;}
+.dot.on{background:var(--accent);}
+.player-screen{
+  aspect-ratio:16/9;border-radius:10px;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 55%,#334155 100%);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.player-screen::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 14px);
+}
+.play-badge{
+  width:58px;height:58px;border-radius:50%;background:var(--accent);
+  display:flex;align-items:center;justify-content:center;position:relative;z-index:1;
+  box-shadow:0 0 0 10px rgba(249,115,22,.16);
+}
+.player-meta{display:flex;justify-content:space-between;font-size:12.5px;color:#94a3b8;margin-top:12px;}
+.player-bar{height:5px;border-radius:99px;background:#334155;margin-top:10px;overflow:hidden;}
+.player-bar i{display:block;height:100%;width:46%;background:var(--accent);border-radius:99px;}
+
+/* 通用区块 */
+section.block{padding:56px 0;}
+section.block.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-head{max-width:44em;margin-bottom:30px;}
+.sec-head .kicker{
+  font-size:13px;font-weight:700;color:var(--accent-deep);letter-spacing:1.5px;text-transform:uppercase;
+}
+.sec-head h2{font-size:clamp(22px,2.6vw,28px);margin-top:8px;font-weight:800;}
+.sec-head p{margin:10px 0 0;color:var(--muted);font-size:15.5px;}
+
+.grid{display:grid;gap:18px;}
+.grid.g4{grid-template-columns:repeat(4,1fr);}
+.grid.g3{grid-template-columns:repeat(3,1fr);}
+.grid.g2{grid-template-columns:repeat(2,1fr);}
+
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(15,23,42,.5);border-color:#cbd5e1;}
+.card .ico{
+  width:40px;height:40px;border-radius:11px;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.card h3{font-size:16.5px;font-weight:700;margin-bottom:8px;}
+.card p{margin:0;font-size:14.5px;color:var(--muted);}
+
+/* 分类列表 */
+.cat-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.cat-item{
+  display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;transition:border-color .18s,background .18s;
+}
+.cat-item:hover{border-color:#fdba74;background:#fffaf5;}
+.cat-thumb{
+  width:44px;height:44px;border-radius:10px;flex:none;
+  background:linear-gradient(135deg,#1e293b,#334155);
+  display:flex;align-items:center;justify-content:center;
+}
+.cat-item strong{display:block;font-size:14.5px;color:var(--ink);}
+.cat-item span{font-size:12.5px;color:var(--muted);}
+
+/* 使用步骤 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step;}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:13px;font-weight:800;color:var(--accent);letter-spacing:1px;
+}
+.step h3{font-size:16.5px;margin:8px 0 8px;font-weight:700;}
+.step p{margin:0;font-size:14.5px;color:var(--muted);}
+
+/* 问答 */
+.faq{display:grid;gap:12px;}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 18px;
+}
+details[open]{border-color:#fdba74;}
+summary{
+  cursor:pointer;list-style:none;padding:16px 0;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15.5px;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--accent);font-size:20px;line-height:1;font-weight:400;}
+details[open] summary::after{content:"–";}
+details p{margin:0 0 18px;font-size:14.5px;color:var(--muted);}
+
+/* 正文区 */
+.article{max-width: var(--max);}
+.article .prose{max-width:46em;}
+.prose p{margin:0 0 16px;font-size:15.5px;}
+.prose p:last-child{margin-bottom:0;}
+
+/* 下载条 */
+.dl-bar{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(120deg,#111827,#1e293b);
+  border-radius:20px;padding:28px 30px;color:#e2e8f0;margin-top:8px;
+}
+.dl-bar .t{flex:1;min-width:240px;}
+.dl-bar h2{color:#fff;font-size:20px;margin-bottom:6px;}
+.dl-bar p{margin:0;font-size:14.5px;color:#94a3b8;}
+.btn-dl{
+  background:var(--accent);color:#fff;pointer-events:none;
+  padding:11px 26px;border-radius:10px;font-weight:700;font-size:15px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+
+/* 页尾 */
+footer.site{background:#0b1220;color:#94a3b8;padding:44px 0 30px;margin-top:0;}
+.foot-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;
+  padding-bottom:28px;border-bottom:1px solid #1e293b;
+}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px;margin-bottom:12px;}
+footer .about{font-size:14px;line-height:1.8;max-width:32em;margin:0;}
+footer h4{color:#e2e8f0;font-size:14px;margin:0 0 12px;font-weight:700;letter-spacing:.5px;}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+footer ul a{font-size:14px;color:#94a3b8;transition:color .18s;}
+footer ul a:hover{color:var(--accent);}
+.foot-bottom{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-top:18px;font-size:13px;color:#64748b;
+}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;padding:38px 20px;}
+  .hero-visual{order:2;}
+  .grid.g4{grid-template-columns:repeat(2,1fr);}
+  .grid.g3{grid-template-columns:repeat(2,1fr);}
+  .cat-list{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:1fr;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+  .foot-top .about-col{grid-column:1/-1;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .nav-inner{padding:10px 16px;gap:10px;}
+  nav.main{margin-left:0;width:100%;overflow-x:auto;padding-bottom:2px;flex-wrap:nowrap;}
+  nav.main a{white-space:nowrap;font-size:14px;}
+  .grid.g4,.grid.g3,.grid.g2{grid-template-columns:1fr;}
+  .cat-list{grid-template-columns:1fr;}
+  section.block{padding:40px 0;}
+  .hero-facts{gap:20px;}
+  .dl-bar{padding:22px;flex-direction:column;align-items:flex-start;}
+  .foot-top{grid-template-columns:1fr;}
+  .wrap{padding:0 16px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="51免费版视频 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="15" fill="#111827"/>
+        <path d="M26 20l18 12-18 12z" fill="#f97316"/>
+      </svg>
+      <span>51免费版视频</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#watch">观看入口</a>
+      <a href="#channels">内容分类</a>
+      <a href="#howto">使用步骤</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">页面说明</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+          免费版 · 在线观看
+        </span>
+        <h1>51免费版视频</h1>
+        <p class="lead">51免费版视频是一个面向普通访问者的免费视频观看页面。这里把观看入口、内容分类和操作说明放在同一处，打开页面即可按分类找到想看的视频，无需额外安装客户端。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#watch">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            进入观看入口
+          </a>
+          <a class="btn btn-ghost" href="#channels">浏览内容分类</a>
+        </div>
+        <div class="hero-facts">
+          <div class="fact"><b>免费版</b><span>页面定位</span></div>
+          <div class="fact"><b>3 步</b><span>找到想看的内容</span></div>
+          <div class="fact"><b>多分类</b><span>按兴趣浏览</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="player-card">
+          <div class="player-top">
+            <span class="dot on"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="player-screen">
+            <span class="play-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+          <div class="player-meta"><span>51免费版视频</span><span>免费观看</span></div>
+          <div class="player-bar"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 观看入口 -->
+  <section class="block" id="watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Watch</div>
+        <h2>51免费版视频的观看入口</h2>
+        <p>入口按使用场景拆成几块，先确定你想看的内容类型，再从对应位置进入。页面上的入口只承担导航作用，观看行为本身在入口页面完成。</p>
+      </div>
+      <div class="grid g4">
+        <article class="card">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
+          <h3>直接观看</h3>
+          <p>想马上看内容，从这一入口进入播放页。页面不要求注册，打开即可开始。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+          <h3>按分类浏览</h3>
+          <p>不确定看什么时，先看分类目录。分类名称直接对应内容方向，点开即可看到该类的视频。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
+          <h3>查找特定内容</h3>
+          <p>已经知道想看什么，用搜索框输入关键词，结果会按匹配度列出可观看的条目。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg></div>
+          <h3>常用入口</h3>
+          <p>把常看的方向放在前面，减少每次重新寻找的步骤，适合有固定偏好的访问者。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容分类 -->
+  <section class="block alt" id="channels">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Channels</div>
+        <h2>51免费版视频的内容分类</h2>
+        <p>分类是浏览免费版视频最直接的方式。每个分类下的条目会持续更新，点击分类名即可进入对应列表。</p>
+      </div>
+      <div class="cat-list">
+        <a class="cat-item" href="#watch">
+          <span class="cat-thumb"><svg width="18" height="18" viewBox="0 0 24 24" fill="#f97316"><path d="M8 5v14l11-7z"/></svg></span>
+          <span><strong>热门推荐</strong><span>近期观看较多的内容</span></span>
+        </a>
+        <a class="cat-item" href="#watch">
+          <span class="cat-thumb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>
+          <span><strong>影音短片</strong><span>篇幅较短、节奏明快的视频</span></span>
+        </a>
+        <a class="cat-item" href="#watch">
+          <span class="cat-thumb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><strong>连续剧集</strong><span>分集播出、按顺序观看</span></span>
+        </a>
+        <a class="cat-item" href="#watch">
+          <span class="cat-thumb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></span>
+          <span><strong>专题合集</strong><span>按主题归并的一组视频</span></span>
+        </a>
+        <a class="cat-item" href="#watch">
+          <span class="cat-thumb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 8l7-5 7 5"/></svg></span>
+          <span><strong>新上内容</strong><span>按上线时间排列的条目</span></span>
+        </a>
+        <a class="cat-item" href="#watch">
+          <span class="cat-thumb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"><path d="M20 12a8 8 0 10-3.2 6.4L20 20l-.8-3.2A7.9 7.9 0 0020 12z"/></svg></span>
+          <span><strong>用户收藏</strong><span>被多次标记的内容方向</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用步骤 -->
+  <section class="block" id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">How to use</div>
+        <h2>使用51免费版视频的三个步骤</h2>
+        <p>整个流程不复杂：先进入页面，再选择内容，最后开始播放。下列步骤对应页面上的实际入口位置。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>从首屏进入</h3>
+          <p>打开51免费版视频后，首屏的“进入观看入口”按钮会直接跳到观看区，避免在页面中来回寻找。</p>
+        </div>
+        <div class="step">
+          <h3>选定内容方向</h3>
+          <p>在内容分类里挑一个方向，或使用搜索框输入关键词。分类名直接描述内容类型，便于快速判断。</p>
+        </div>
+        <div class="step">
+          <h3>开始播放</h3>
+          <p>点击条目进入播放页，视频以在线方式播放。若加载较慢，可先检查网络连接再重试。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文说明 -->
+  <section class="block alt" id="about">
+    <div class="wrap article">
+      <div class="sec-head">
+        <div class="kicker">About</div>
+        <h2>关于这个免费版视频页面</h2>
+      </div>
+      <div class="prose">
+        <p>51免费版视频的定位很明确：把免费视频的观看入口集中呈现，让访问者少走弯路。页面本身不存储视频文件，也不设置会员门槛，所有入口指向可在线播放的内容页。对只想快速看一段视频的人来说，这种结构比层层跳转的导航更省时间。</p>
+        <p>内容分类承担了主要的分流作用。热门推荐适合没有明确目标、想随便看看的访问者；影音短片和连续剧集则对应不同的观看习惯，前者单次看完，后者需要按顺序追看。专题合集把同一主题的条目归在一起，适合一次性浏览一组内容。新上内容按上线时间排列，方便回头查看更新。</p>
+        <p>使用免费版视频时，有几个细节值得注意。第一，页面上的搜索框只在本页范围内匹配内容，输入越具体，结果越集中。第二，分类列表中的条目会随时间变化，同一分类下的顺序并不固定。第三，播放页的加载速度与本地网络状况相关，若出现缓冲，通常刷新页面即可恢复。</p>
+        <p>对于第一次访问的人，建议先看首屏的入口按钮，再回到分类区确认方向。经常使用的话，记住自己常看的分类名称会比每次搜索更快。51免费版视频不在页面内弹出额外窗口，也不要求填写个人信息，这是它作为免费版视频页面的基本设定。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>51免费版视频常见问题</h2>
+        <p>以下问题来自访问者在浏览免费版视频页面时最常提出的疑问，答案对应本页的实际设定。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>51免费版视频需要注册或付费吗？</summary>
+          <p>不需要。该页面按免费版视频的定位提供观看入口，观看过程不涉及注册账号，也没有付费解锁的环节。</p>
+        </details>
+        <details>
+          <summary>页面上的分类会更新吗？</summary>
+          <p>会。分类下的条目按内容上线情况调整，热门推荐与新上内容两处的变化相对明显，建议以当次打开时看到的内容为准。</p>
+        </details>
+        <details>
+          <summary>搜索不到想看的内容怎么办？</summary>
+          <p>先尝试换用更短的关键词，或改用分类浏览。搜索只匹配当前收录的条目，若条目尚未收录，结果会为空。</p>
+        </details>
+        <details>
+          <summary>在手机上能正常使用吗？</summary>
+          <p>可以。页面按响应式布局设计，导航、分类列表与正文在手机屏幕上会自动改为单列排列，按钮尺寸也适合触屏操作。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载条 -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <div class="dl-bar">
+        <div class="t">
+          <h2>获取51免费版视频页面说明</h2>
+          <p>整理好的页面使用说明，包含入口位置与分类结构的简要描述，便于保存备查。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="about-col">
+        <div class="foot-brand">
+          <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="15" fill="#f97316"/>
+            <path d="M26 20l18 12-18 12z" fill="#111827"/>
+          </svg>
+          51免费版视频
+        </div>
+        <p class="about">51免费版视频是免费视频观看入口页面，集中呈现内容分类与使用说明，帮助访问者更快找到想看的在线视频。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#watch">观看入口</a></li>
+          <li><a href="#channels">内容分类</a></li>
+          <li><a href="#howto">使用步骤</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关说明</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#about">页面说明</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>51免费版视频 · 免费视频观看入口</span>
+      <span>页面内容以实际收录为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
